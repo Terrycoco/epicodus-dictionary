@@ -13,6 +13,7 @@ end
 post('/add_word') do
   wordstr = params.fetch('new_word')
   new_word = Word.new(wordstr)
+  Word.sort()
   @words = Word.all()
   erb(:index)
 end
