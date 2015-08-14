@@ -54,7 +54,8 @@ describe(Word) do
       Word.clear()
       @word1 = Word.new('rat')
       @word2 = Word.new('cat')
-      expect(Word.all().[0]).to(eq('cat'))
+      Word.sort()
+      expect(Word.all()[0]).to(eq('cat'))
     end
   end
 end
