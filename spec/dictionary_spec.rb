@@ -58,4 +58,13 @@ describe(Word) do
       expect(Word.all()[0].word()).to(eq('cat'))
     end
   end
+
+  describe(".find") do
+    it('accepts a word string and returns the word object if found in collection') do
+      Word.clear()
+      @word1 = Word.new('rat')
+      @word2 = Word.new('cat')
+      expect(Word.find('rat')).to(eq(@word1))
+    end
+  end
 end

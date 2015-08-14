@@ -36,4 +36,14 @@ class Word
   define_singleton_method(:sort) do
     @@words.sort_by! { |w| w.word.downcase }
   end
+
+  define_singleton_method(:find) do |wordstr|
+    @@words.each() do |w|
+      if w.word == wordstr
+        return w
+      end
+    end
+  end
+
+
 end
