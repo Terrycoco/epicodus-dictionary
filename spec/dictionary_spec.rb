@@ -35,4 +35,13 @@ describe(Word) do
       expect(@word.word()).to(eq('rat'))
     end
   end
+
+  describe('#add_def') do
+    it("adds a definition to a word") do
+      @word = Word.new('rat')
+      @new_def = Definition.new('a hair snarl')
+      @word.add_def(@new_def)
+      expect(@word.definitions().include? (@new_def)).to(eq(true))
+    end
+  end
 end
