@@ -17,3 +17,9 @@ post('/add_word') do
   @words = Word.all()
   erb(:index)
 end
+
+get('/word_defs/:wordstr') do
+  wordstr = params.fetch('wordstr')
+  @word = Word.find(wordstr)
+  erb(:word_defs)
+end
