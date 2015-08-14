@@ -19,6 +19,10 @@ class Word
     @definitions.push(definition)
   end
 
+  define_method(:remove_def) do |definition|
+    @definitions.delete(definition)
+  end
+
 
 #class methods
   define_singleton_method(:all) do
