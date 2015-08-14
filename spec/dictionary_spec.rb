@@ -37,4 +37,15 @@ describe(Word) do
       expect(Word.all().length()).to(eq(0))
     end
   end
+
+  describe('#remove_def') do
+    it('removes a definition from the list of definitions') do
+      Word.clear()
+      @word = Word.new('rat')
+      new_def = Definition.new('n','a hair snarl')
+      @word.add_def(new_def)
+      @word.remove_def(new_def)
+      expect(@word.definitions().include? (new_def)).to(eq(false))
+    end
+  end
 end
