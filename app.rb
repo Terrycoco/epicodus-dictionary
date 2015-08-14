@@ -23,3 +23,14 @@ get('/word_defs/:wordstr') do
   @word = Word.find(wordstr)
   erb(:word_defs)
 end
+
+post('/add_def/:wordstr') do
+  wordstr = params.fetch('wordstr')
+  word = Word.find(wordstr)
+  word_type = params.fetch('word_type')
+  new_def = params.fetch('new_def')
+  @newdef = Definition.new(word_type, new_def)
+  word.add_def(@newdef)
+  @word = word
+  erb(:word_defs)
+end

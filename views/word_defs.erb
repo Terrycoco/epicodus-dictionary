@@ -3,15 +3,15 @@
 
 <ul>
   <% @word.definitions().each() do |definition| %>
-  <%= @definition.word_type %>, <% @definition.definition() %><li>
+  <i><%= definition.word_type %>: </i> <%= definition.definition() %><li>
   <% end %>
 </ul>
 
 
-<form id="form_id" action="/add_def" method="post">
+<form id="form_id" action="/add_def/<%= @word.word() %>" method="post">
   <div class="">
     <label for="word_type">Word Type</label>
-    <select>
+    <select name="word_type">
         <option value="n">noun</option>
         <option value="v">verb</option>
         <option value="adj">adjective</option>
