@@ -1,9 +1,9 @@
 class Word
   @@words = []
 
-  define_method(:initialize) do |word|
-    @word = word
-    @@words.push(word)
+  define_method(:initialize) do |wordstr|
+    @word = wordstr
+    @@words.push(self)
     @definitions = []
   end
 
@@ -33,7 +33,7 @@ class Word
     @@words = []
   end
 
-  define_singleton_method(:all) do
-    @@words
+  define_singleton_method(:sort) do
+    @@words.sort_by { |w| w.word.downcase }
   end
 end

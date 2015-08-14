@@ -31,14 +31,14 @@ describe(Word) do
     end
   end
 
-  describe('clear') do
+  describe('.clear') do
     it('deletes all words from words collection') do
       Word.clear()
       expect(Word.all().length()).to(eq(0))
     end
   end
 
-  describe('#remove_def') do
+  describe('.remove_def') do
     it('removes a definition from the list of definitions') do
       Word.clear()
       @word = Word.new('rat')
@@ -46,6 +46,15 @@ describe(Word) do
       @word.add_def(new_def)
       @word.remove_def(new_def)
       expect(@word.definitions().include? (new_def)).to(eq(false))
+    end
+  end
+
+  describe(".sort") do
+    it('sorts the list of words alphabetically') do
+      Word.clear()
+      @word1 = Word.new('rat')
+      @word2 = Word.new('cat')
+      expect(Word.all().[0]).to(eq('cat'))
     end
   end
 end
