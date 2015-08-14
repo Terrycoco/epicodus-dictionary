@@ -1,0 +1,18 @@
+<h1>Your Dictionary</h1>
+<% if @words.length() > 0 %>
+     <h6>Click on word to see definitions</h6>
+<% end %>
+
+<ul>
+  <% @words.each() do |w| %>
+  <li><a href="/word_defs/<%= w.word() %>"><%= w.word() %></a></li>
+    <% end %>
+</ul>
+
+<form id="form_id" action="/add_word" method="post">
+  <div class="form-group">
+    <label for="new_word">New Word: </label>
+    <input type="text" name="new_word">
+  </div>
+  <button class='btn-success' type="submit">Add Word</button>
+</form>
