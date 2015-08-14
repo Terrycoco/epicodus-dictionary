@@ -1,5 +1,6 @@
 require('rspec')
 require('definition')
+require('word')
 
 describe(Definition) do
 
@@ -22,6 +23,16 @@ describe(Definition) do
     it('removes all definitions from the collection') do
       Definition.clear()
       expect(Definition.all().length()).to(eq(0))
+    end
+  end
+end
+
+describe(Word) do
+
+  describe('#initialize') do
+    it("accepts a word and adds it to the dictionary") do
+      @word = Word.new('rat')
+      expect(@word.word()).to(eq('rat'))
     end
   end
 end
