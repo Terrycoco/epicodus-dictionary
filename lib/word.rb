@@ -34,6 +34,6 @@ class Word
   end
 
   define_singleton_method(:sort) do
-    @@words.sort_by { |w| w.word.downcase }
+    @@words.sort_by! { |w| w.word.downcase }
   end
 end
