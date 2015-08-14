@@ -11,20 +11,6 @@ describe(Definition) do
     end
   end
 
-  describe('.all') do
-    it("creates a new instance and adds it to the Definition collection") do
-      @def = Definition.new('v', 'to tell on someone')
-      @def.save()
-      expect(Definition.all().include? (@def)).to(eq(true))
-    end
-  end
-
-  describe('.clear') do
-    it('removes all definitions from the collection') do
-      Definition.clear()
-      expect(Definition.all().length()).to(eq(0))
-    end
-  end
 end
 
 describe(Word) do
@@ -37,11 +23,11 @@ describe(Word) do
   end
 
   describe('#add_def') do
-    it("adds a definition to a word") do
+    it("adds a definition to a definitions collection in the word") do
       @word = Word.new('rat')
-      @new_def = Definition.new('a hair snarl')
-      @word.add_def(@new_def)
-      expect(@word.definitions().include? (@new_def)).to(eq(true))
+      new_def = Definition.new('n','a hair snarl')
+      @word.add_def(new_def)
+      expect(@word.definitions().include? (new_def)).to(eq(true))
     end
   end
 end
