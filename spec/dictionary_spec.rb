@@ -34,7 +34,7 @@ describe(Word) do
   describe('clear') do
     it('deletes all words from words collection') do
       Word.clear()
-      expect(Definition.all().length()).to(eq(0))
+      expect(Word.all().length()).to(eq(0))
     end
   end
 end

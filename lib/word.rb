@@ -19,6 +19,16 @@ class Word
     @definitions.push(definition)
   end
 
+
+#class methods
+  define_singleton_method(:all) do
+    @@words
+  end
+
+  define_singleton_method(:clear) do
+    @@words = []
+  end
+
   define_singleton_method(:all) do
     @@words
   end
