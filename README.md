@@ -5,13 +5,17 @@
 ### By Terry Marr
 
 ##
-This program creates a class Word thjat contains another class Definition.
+This program creates a class Word that contains another class Definition.
 The index will present the user with a list of words and the ability to add a word.  Upon click on that word the user will be able to add a definition of the word.
 
 ## Setup
 Download repository from github
 from terminal run ruby app.rb
 in browser, go to localhost:4567
+
+To run from heroku go to this link:
+
+https://git.heroku.com/whispering-mesa-7579.git
 
 
 ## Technologies Used
