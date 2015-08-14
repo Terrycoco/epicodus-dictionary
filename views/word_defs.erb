@@ -1,2 +1,25 @@
 <h3>Definitions for the word </h3>
 <h1><%= @word.word() %></h1>
+
+<ul>
+  <% @word.definitions().each() do |definition| %>
+  <%= @definition.word_type %>, <% @definition.definition() %><li>
+  <% end %>
+</ul>
+
+
+<form id="form_id" action="/add_def" method="post">
+  <div class="">
+    <label for="word_type">Word Type</label>
+    <select>
+        <option value="n">noun</option>
+        <option value="v">verb</option>
+        <option value="adj">adjective</option>
+        <option value="adv">adverb</option>
+      </select>
+
+    <label for="new_def">New Definition</label>
+    <input type="text" name="new_def" value="">
+  </div>
+  <button name="button">Add</button>
+</form>
