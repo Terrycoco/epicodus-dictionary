@@ -18,4 +18,12 @@ describe('dictionary path routing', {:type => :feature}) do
     expect(page).to have_content('rat')
   end
 
+  it('clicks on word to see list of definitions') do
+    visit('/')
+    fill_in('new_word', :with => 'rat')
+    click_button('Add Word')
+    click_link('rat')
+    expect(page).to have_content('Definitions for rat')
+  end
+
 end
