@@ -30,4 +30,11 @@ describe(Word) do
       expect(@word.definitions().include? (new_def)).to(eq(true))
     end
   end
+
+  describe('clear') do
+    it('deletes all words from words collection') do
+      Word.clear()
+      expect(Definition.all().length()).to(eq(0))
+    end
+  end
 end
